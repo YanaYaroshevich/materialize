@@ -1,5 +1,5 @@
 /*!
- * Materialize v0.100.2 (http://materializecss.com)
+ * Materialize vundefined (http://materializecss.com)
  * Copyright 2014-2017 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
@@ -5634,11 +5634,6 @@ if (Vel) {
 
         // enter
         if (13 === e.which) {
-          // Override enter if autocompleting.
-          if (self.hasAutocomplete && $chips.find('.autocomplete-content.dropdown-content').length && $chips.find('.autocomplete-content.dropdown-content').children().length) {
-            return;
-          }
-
           e.preventDefault();
           self.addChip({ tag: $target.val() }, $chips);
           $target.val('');
