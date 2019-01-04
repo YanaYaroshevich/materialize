@@ -17,7 +17,7 @@
       belowOrigin: false,
       alignment: 'left',
       stopPropagation: false,
-      container: window
+      scrollContainer: window
     };
 
     // Open dropdown.
@@ -61,8 +61,8 @@
           curr_options.alignment = origin.data('alignment');
         if (origin.data('stoppropagation') !== undefined)
           curr_options.stopPropagation = origin.data('stoppropagation');
-        if (origin.data('container') !== undefined)
-          curr_options.container = origin.data('container');
+        if (origin.data('scrollcontainer') !== undefined)
+          curr_options.scrollContainer = origin.data('scrollcontainer');
       }
 
       updateOptions();
@@ -98,11 +98,11 @@
         }
 
         // Offscreen detection
-        var containerInnerHeight = $(curr_options.container).innerHeight;
-        var windowHeight = typeof containerInnerHeight === 'function' ? containerInnerHeight() : containerInnerHeight;
+        var containerInnerHeight = $(curr_options.scrollContainer).innerHeight;
+        var windowHeight = typeof containerInnerHeight === 'function' ? $(curr_options.scrollContainer).innerHeight() : containerInnerHeight;
         var originHeight = origin.innerHeight();
         var offsetLeft = origin.offset().left;
-        var offsetTop = origin.offset().top - $(curr_options.container).scrollTop();
+        var offsetTop = origin.offset().top - $(curr_options.scrollContainer).scrollTop();
         var currAlignment = curr_options.alignment;
         var gutterSpacing = 0;
         var leftPosition = 0;
@@ -162,7 +162,7 @@
             .css({
               opacity: 0,
               left: 0
-            })
+            });
 
           var offsetRight = origin.position().left + originWidth - activates.width();
           gutterSpacing = -curr_options.gutter;

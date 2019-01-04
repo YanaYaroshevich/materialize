@@ -72,6 +72,10 @@
               <td>Defines the edge the menu is aligned to. Default: 'left'</td>
             </tr>
             <tr>
+              <td>scrollContainer</td>
+              <td>Provide an element (query) that will be the bounding container of the dropdown. Default: window</td>
+            </tr>
+            <tr>
               <td>stopPropagation</td>
               <td>If true, stops the event propagating from the dropdown origin click handler. Default: false</td>
             </tr>
@@ -97,6 +101,7 @@
       gutter: 0, // Spacing from edge
       belowOrigin: false, // Displays dropdown below the button
       alignment: 'left', // Displays dropdown with edge aligned to the left of button
+      scrollContainer: '.my-container', // Defines the parent container of dropdown to set the right position on opening
       stopPropagation: false // Stops event propagation
     }
   );
