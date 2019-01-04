@@ -1686,7 +1686,7 @@ if (Vel) {
 
         // Offscreen detection
         var containerInnerHeight = $(curr_options.scrollContainer).innerHeight;
-        var windowHeight = typeof containerInnerHeight === 'function' ? containerInnerHeight() : containerInnerHeight;
+        var windowHeight = typeof containerInnerHeight === 'function' ? $(curr_options.scrollContainer).innerHeight() : containerInnerHeight;
         var originHeight = origin.innerHeight();
         var offsetLeft = origin.offset().left;
         var offsetTop = origin.offset().top - $(curr_options.scrollContainer).scrollTop();
